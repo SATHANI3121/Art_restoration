@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Artrevoke</title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+<body>
+    <div class="navbar">
+        <h3 style="color:rgb(164, 66, 255);">ArtEvoke</h3>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('explore') }}">About us</a>
+        <a href="{{ url_for('reconstruct') }}">Explore</a>
+    </div>
+    <div class="container">
+        <h1 style="color:rgb(164, 66, 255); font-size: 44px;">Artrevoke</h1>
+        <h3 style="color: aqua;">"Unlock the secrets of ancient temple sculptures with ARTEVOKE -
+            where history meets innovation in a click!"</h3>
+        <div class="button-container">
+            <a href="{{ url_for('explore') }}" class="image-button">
+                <img src="/static/images/shiva.jpg" alt="Explore the Statues">
+                <span class="button-text">Search The Statue by images</span>
+            </a>
+            <a href="{{ url_for('reconstruct') }}" class="image-button">
+                <img src="/static/images/broken.jpg" alt="Reconstruct the Statues">
+                <span class="button-text">Reconstruct the Statues</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

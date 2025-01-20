@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - Artrevoke</title>
+    <link rel="stylesheet" href="/static/slick.css">
+    <link rel="stylesheet" href="/static/slick-theme.css">
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reconstructed Images</h1>
+        <div class="image-container">
+            <div class="carousel">
+                {% for image in output_images %}
+                <div>
+                    <img src="{{ url_for('static', filename=image.split('static/')[-1]) }}" alt="Output Image {{ loop.index }}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="{{ url_for('home') }}">
+                <button type="button">Back to Home</button>
+            </a>
+        </div>
+    </div>
+
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true
+            });
+        });
+    </script>
+</body>
+</html>
